@@ -22,10 +22,14 @@ export class LoginComponent {
   token = '';
 
 
-  onSubmit() {
-    this.submitted = true;
-    console.log(this.model);
+  ngOnInit(){
+    if (this.token != null){
+      this.router.navigate(['/clients']);
+    }
+  }
 
+
+  onSubmit() {
     const req = this.http
         .post<TokenDto>('http://localhost:8080/ingeneo-test-api/auth/token', this.model)
         .subscribe(data => {
