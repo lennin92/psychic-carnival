@@ -1,0 +1,17 @@
+<h2>Clients</h2>
+<table>
+<tr>
+<th>Id</th>
+<th>Documento</th>
+<th>Nombre</th>
+<th></th>
+</tr>
+<tr *ngFor='let cl of clients'>
+<td>{{ cl.id }}</td>
+<td>{{ cl.identificationNumber }}</td>
+<td>{{ cl.name }}</td>
+<td>
+  <a href="#">Ver pedidos</a>
+</td>
+</tr>
+</table>
