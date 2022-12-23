@@ -1,1 +1,17 @@
-<p>create-user works!</p>
+<p>Create User</p>
+
+<form #createClientForm="ngForm" (ngSubmit)="onSubmit()" >
+<div class="form-group">
+<label for="username">Username</label>
+<input type="text" class="form-control" id="username"
+required
+[(ngModel)]="model.username" name="username">
+</div>
+<div class="form-group">
+<label for="password">Password</label>
+<input class="form-control" id="password" type="password"
+required
+[(ngModel)]="model.password" name="password">
+</div>
+<button type="submit" class="btn btn-success" [disabled]="!createClientForm.form.valid">Submit</button>
+</form>

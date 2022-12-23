@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Router } from '@angular/router'; 
 
 import { LoginDto } from '../dtos/login-dto';
 import { TokenDto } from '../dtos/token-dto';
