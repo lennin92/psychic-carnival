@@ -40,7 +40,7 @@ export class ClientsDeliveriesComponent {
     this.route.queryParams.subscribe(params=>{
       const cid = params['client'];
       this.http
-      .get<WaybillDto[]>(`${environment.base_url}/waybill?=cid`, {headers:{'Authorization': `Bearer ${this.token}`}})
+      .get<WaybillDto[]>(`${environment.base_url}/waybill?clientId==${cid}`, {headers:{'Authorization': `Bearer ${this.token}`}})
       .subscribe(bls =>{
         this.waybills = bls;
         console.log(this.waybills);
@@ -49,7 +49,7 @@ export class ClientsDeliveriesComponent {
   }
   loadBillOfLanding() : void {
     this.http
-    .get<BillOfLandingDto[]>('http://localhost:8080/ingeneo-test-api/bill_of_landing', {headers:{'Authorization': `Bearer ${this.token}`}})
+    .get<BillOfLandingDto[]>('http://localhost:8080/ingeneo-test-api/bill_of_landing?clientId==${cid}', {headers:{'Authorization': `Bearer ${this.token}`}})
     .subscribe(bls => {
       this.billsOfLanding = bls;
       console.log(this.billsOfLanding);
