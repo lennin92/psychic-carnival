@@ -1,7 +1,7 @@
 <h2>Deliveries List</h2>
 <a routerLink="/clients" routerLinkActive="active" class="btn btn-primary">Clientst</a>
 <hr>
-<a routerLink="/clients" routerLinkActive="active" class="btn btn-success">Crear Entrega Maritima</a>
+<a routerLink="/create-waybill"  [queryParams]="{ client: clientId }" routerLinkActive="active" class="btn btn-success">Crear Entrega Maritima</a>
 <h3>Bill Of Landing (Maritimo)</h3>
 <table class="table">
 <thead>
@@ -14,7 +14,7 @@
 <th>Puerto</th>
 <th>Precio</th>
 <th>Cantidad</th>
-<th>Descuento</th>
+<th>Precio con Descuento</th>
 <th></th>
 </tr>
 </thead>
@@ -48,7 +48,7 @@
 <th>Bodega</th>
 <th>Precio</th>
 <th>Cantidad</th>
-<th>Descuento</th>
+<th>Precio con Descuento</th>
 <th></th>
 </tr>
 </thead>

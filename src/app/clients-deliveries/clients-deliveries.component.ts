@@ -21,11 +21,16 @@ export class ClientsDeliveriesComponent {
   token = localStorage.getItem('auth_token');
   waybills :WaybillDto[] = [];
   billsOfLanding : BillOfLandingDto[] = [];
+  clientId = 0;
+
 
   ngOnInit(){
     if (this.token == null){
       this.router.navigate(['/login']);
     }
+    this.route.queryParams.subscribe( params =>{
+      this.clientId = params['client'];
+    });
     this.loadWayBills();
     this.loadBillOfLanding();
   };

@@ -13,6 +13,7 @@ import { ClientsListComponent } from './clients-list/clients-list.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateClientComponent } from './create-client/create-client.component';
 import { ClientsDeliveriesComponent } from './clients-deliveries/clients-deliveries.component';
+import { CreateWaybillComponent } from './create-waybill/create-waybill.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ClientsDeliveriesComponent } from './clients-deliveries/clients-deliver
     ClientsListComponent,
     CreateUserComponent,
     CreateClientComponent,
-    ClientsDeliveriesComponent
+    ClientsDeliveriesComponent,
+    CreateWaybillComponent
   ],
   imports: [
     BrowserModule,
