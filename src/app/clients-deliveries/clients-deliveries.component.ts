@@ -49,6 +49,7 @@ export class ClientsDeliveriesComponent {
   }
   loadBillOfLanding() : void {
     this.route.queryParams.subscribe(params=>{
+      const cid = params['client'];
       this.http
       .get<BillOfLandingDto[]>('http://localhost:8080/ingeneo-test-api/bill_of_landing?clientId=${cid}', {headers:{'Authorization': `Bearer ${this.token}`}})
       .subscribe(bls => {
