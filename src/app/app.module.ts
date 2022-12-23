@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { ClientsListComponent } from './clients-list/clients-list.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateClientComponent } from './create-client/create-client.component';
+import { ClientsDeliveriesComponent } from './clients-deliveries/clients-deliveries.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateClientComponent } from './create-client/create-client.component';
     LoginComponent,
     ClientsListComponent,
     CreateUserComponent,
-    CreateClientComponent
+    CreateClientComponent,
+    ClientsDeliveriesComponent
   ],
   imports: [
     BrowserModule,

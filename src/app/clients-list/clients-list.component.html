@@ -15,7 +15,7 @@
 <td>{{ cl.identificationNumber }}</td>
 <td>{{ cl.name }}</td>
 <td>
-<a href="#" class="btn btn-outline-info">Ver pedidos</a>
+<a routerLink="/client-deliveries" [queryParams]="{ client: cl.id }" class="btn btn-outline-info">Ver pedidos</a>
 </td>
 </tr>
 </tbody>

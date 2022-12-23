@@ -1,0 +1,69 @@
+<h2>Deliveries List</h2>
+<a routerLink="/clients" routerLinkActive="active" class="btn btn-primary">Clientst</a>
+<hr>
+<a routerLink="/clients" routerLinkActive="active" class="btn btn-success">Crear Entrega Maritima</a>
+<h3>Bill Of Landing (Maritimo)</h3>
+<table class="table">
+<thead>
+<tr>
+<th>Id</th>
+<th>Num flota</th>
+<th>Num guía</th>
+<th>Producto</th>
+<th>Cliente</th>
+<th>Puerto</th>
+<th>Precio</th>
+<th>Cantidad</th>
+<th>Descuento</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor='let cl of billsOfLanding'>
+<td>{{ cl.id }}</td>
+<td>{{ cl.fleetNumber }}</td>
+<td>{{ cl.billOfLandingNumber }}</td>
+<td>{{ cl.productType }}</td>
+<td>[{{ cl.clientIdentificationNumber }}] {{ cl.clientName }}</td>
+<td>{{ cl.shipmentPort }}</td>
+<td>{{ cl.price }}</td>
+<td>{{ cl.quantity }}</td>
+<td>{{ cl.priceWithDiscount }}</td>
+</tr>
+</tbody>
+</table>
+
+
+<hr>
+
+<h3>Waybill (Terrestre)</h3>
+<table class="table">
+<thead>
+<tr>
+<th>Id</th>
+<th>Placas camion</th>
+<th>Num guía</th>
+<th>Producto</th>
+<th>Cliente</th>
+<th>Bodega</th>
+<th>Precio</th>
+<th>Cantidad</th>
+<th>Descuento</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor='let cl of waybills'>
+<td>{{ cl.id }}</td>
+<td>{{ cl.trucksPlate }}</td>
+<td>{{ cl.waybillNumber }}</td>
+<td>{{ cl.productType }}</td>
+<td>[{{ cl.clientIdentificationNumber }}] {{ cl.clientName }}</td>
+<td>{{ cl.warehouse }}</td>
+<td>{{ cl.price }}</td>
+<td>{{ cl.quantity }}</td>
+<td>{{ cl.priceWithDiscount }}</td>
+</tr>
+</tbody>
+</table>
+
