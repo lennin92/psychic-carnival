@@ -7,6 +7,7 @@ import { catchError, retry } from 'rxjs/operators';
 
 import { WaybillDto } from '../dtos/waybill-dto'
 import { BillOfLandingDto } from '../dtos/bill-of-landing-dto'
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-clients-deliveries',
@@ -39,7 +40,7 @@ export class ClientsDeliveriesComponent {
     this.route.queryParams.subscribe(params=>{
       const cid = params['client'];
       this.http
-      .get<WaybillDto[]>(`http://localhost:8080/ingeneo-test-api/waybill?=cid`, {headers:{'Authorization': `Bearer ${this.token}`}})
+      .get<WaybillDto[]>(`${environment.base_url}/waybill?=cid`, {headers:{'Authorization': `Bearer ${this.token}`}})
       .subscribe(bls =>{
         this.waybills = bls;
         console.log(this.waybills);

@@ -6,6 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 import { ClientDetailDto } from '../dtos/client-detail-dto'
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-clients-list',
@@ -28,7 +29,7 @@ export class ClientsListComponent {
 
   getAllClients(): void {
     this.http
-      .get<ClientDetailDto[]>('http://localhost:8080/ingeneo-test-api/clients', {headers:{'Authorization': `Bearer ${this.token}`}})
+    .get<ClientDetailDto[]>(`${environment.base_url}/clients`, {headers:{'Authorization': `Bearer ${this.token}`}})
       .subscribe(clients => this.clients = clients)
   }
 }

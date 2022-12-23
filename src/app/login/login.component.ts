@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { LoginDto } from '../dtos/login-dto';
 import { TokenDto } from '../dtos/token-dto';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -20,15 +21,12 @@ export class LoginComponent {
 
 
   ngOnInit(){
-    if (this.token != null){
-      this.router.navigate(['/clients']);
-    }
   }
 
 
   onSubmit() {
     const req = this.http
-        .post<TokenDto>('http://localhost:8080/ingeneo-test-api/auth/token', this.model)
+    .post<TokenDto>(`${environment.base_url}/auth/token`, this.model)
         .subscribe(data => {
           this.token = data.token;
           localStorage.setItem('auth_token', this.token);

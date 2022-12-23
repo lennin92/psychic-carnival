@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { environment } from '../environments/environment';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,6 +16,7 @@ export class AppComponent {
   token = localStorage.getItem('auth_token');
 
   ngOnInit(){
+    console.log(environment);
     if (this.token == null){
       this.router.navigate(['/login']);
     }

@@ -7,6 +7,7 @@ import { catchError, retry } from 'rxjs/operators';
 
 import { CreateClientDto } from '../dtos/create-client-dto';
 import { ClientDetailDto } from '../dtos/client-detail-dto'
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-create-client',
@@ -29,7 +30,7 @@ export class CreateClientComponent {
 
   onFormSubmit() {
     const req = this.http
-    .post<ClientDetailDto>('http://localhost:8080/ingeneo-test-api/clients', this.model, {headers:{'Authorization': `Bearer ${this.token}`}})
+    .post<ClientDetailDto>(`${environment.base_url}/clients`, this.model, {headers:{'Authorization': `Bearer ${this.token}`}})
     .subscribe(data => {
       this.router.navigate(['/clients']);
     });

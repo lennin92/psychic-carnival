@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { CreateDeliveryDto } from '../dtos/create-delivery-dto';
 import { ProductTypeDto } from '../dtos/product-type-dto';
+import { environment } from '../../environments/environment';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -43,7 +44,7 @@ export class CreateWaybillComponent {
       this.model.clientId = params['client'];
       console.log(this.model);
       const req = this.http
-      .post<CreateDeliveryDto>('http://localhost:8080/ingeneo-test-api/waybill', this.model, {headers:{'Authorization': `Bearer ${this.token}`}})
+      .post<CreateDeliveryDto>(`${environment.base_url}/waybill`, this.model, {headers:{'Authorization': `Bearer ${this.token}`}})
       .subscribe(data => {
         this.router.navigate(['/clients']);
       });
