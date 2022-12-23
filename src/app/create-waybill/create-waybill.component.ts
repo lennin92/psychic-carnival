@@ -32,7 +32,7 @@ export class CreateWaybillComponent {
 
   updateProductTypes() {
     this.http
-    .get<ProductTypeDto[]>(`http://localhost:8080/ingeneo-test-api/product_types`, {headers:{'Authorization': `Bearer ${this.token}`}})
+    .get<ProductTypeDto[]>(`${environment.base_url}/product_types`, {headers:{'Authorization': `Bearer ${this.token}`}})
     .subscribe(bls =>{
       this.productTypes = bls;
     } );
